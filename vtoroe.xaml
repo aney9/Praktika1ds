@@ -9,9 +9,28 @@
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition/>
-            <RowDefinition Height="50"/>
+            <RowDefinition Height="20"/>
+            <RowDefinition Height="20"/>
+            <RowDefinition Height="20"/>
+            <RowDefinition Height="20"/>
+            <RowDefinition Height="20"/>
+            <RowDefinition Height="20"/>
         </Grid.RowDefinitions>
-        <DataGrid x:Name="dg2"/>
-        <Button Grid.Row="1" Content="Выйти в главное меню" Click="cl2"/>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <DataGrid x:Name="dg2" Grid.ColumnSpan="3" IsReadOnly="True" SelectionChanged="dg2_SelectionChanged"/>
+        <Button Grid.Row="6" Content="Выйти в главное меню" Click="cl2" Grid.ColumnSpan="3"/>
+        <Button Click="cl1" Content="Добавить" Grid.Row="3" Grid.ColumnSpan="3"/>
+        <Button Click="cl3" Content="Изменить" Grid.Row="4" Grid.ColumnSpan="3"/>
+        <Button Click="cl4" Content="Удалить" Grid.Row="5" Grid.ColumnSpan="3"/>
+        <TextBlock Text="Введите сектор" Grid.Row="1"/>
+        <TextBlock Text="Введите ряд" Grid.Row="1" Grid.Column="1"/>
+        <TextBlock Text="Введите место" Grid.Row="1" Grid.Column="2"/>
+        <TextBox Grid.Row="2" x:Name="sekt"/>
+        <TextBox Grid.Row="2" Grid.Column="1" x:Name="ryad"/>
+        <TextBox Grid.Row="2" Grid.Column="2" x:Name="mestoo"/>
     </Grid>
 </Window>
